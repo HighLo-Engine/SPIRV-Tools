@@ -132,6 +132,11 @@ if (DEFINED SPIRV_TOOLS_EXTRA_DEFINITIONS)
   add_definitions(${SPIRV_TOOLS_EXTRA_DEFINITIONS})
 endif()
 
+if (MSVC)
+    # warning level 4 and all warnings as errors
+    add_compile_options(/MD)
+endif()
+
 # Library build setting definitions:
 #
 # * SPIRV_TOOLS_BUILD_STATIC - ON or OFF - Defaults to ON.
